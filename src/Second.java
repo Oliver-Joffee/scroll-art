@@ -6,9 +6,6 @@ public class Second {
 
     public static void main(String[] args) {
         
-        System.err.println(App.getTerminalWidth());
-        System.err.println(getWorkingArea());
-        
         while(true) {
             spaces = (workingArea / 2) - (chars /2);
             for(int i = 0; i < spaces; i++) {
