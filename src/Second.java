@@ -14,7 +14,13 @@ public class Second {
             }
 
             for(int i = 0; i < chars; i++) {
-                System.out.print("#");
+                if(i % 2 == 0){
+                    System.out.print("#");
+                } else {
+                    System.out.print(".");
+                }
+                
+                
             }
 
             if (chars == workingArea || chars == 2) {
