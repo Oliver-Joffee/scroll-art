@@ -4,9 +4,10 @@ public class Second {
     public static int spaces = 0;
     public static boolean receding = true;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         
         while(true) {
+            
             spaces = (workingArea / 2) - (chars /2);
             for(int i = 0; i < spaces; i++) {
                 System.out.print(" ");
@@ -26,7 +27,8 @@ public class Second {
                 chars = chars * 2;
             }
             System.err.println();
-
+            Thread.sleep(25);
+            
         }
     }
 
