@@ -5,7 +5,39 @@ public class App {
     public static int width = getTerminalWidth();
     public static void main(String[] args) throws Exception {
         System.out.println(getTerminalWidth());
-        printTriforce(20);
+        printSparkle(40);
+    }
+    public static void printSparkle(int xSpace) {
+        String[][] sparkle = new String[8][6];
+        fillArray(sparkle);
+
+        sparkle[3][0] = "/";
+        sparkle[4][0] = "\\";
+        sparkle[2][0] = "_";
+        sparkle[1][0] = "_";
+        sparkle[5][0] = "_";
+        sparkle[6][0] = "_";
+        sparkle[1][1] = "\\";
+        sparkle[6][1] = "/";
+        sparkle[1][2] = "/";
+        sparkle[6][2] = "\\";
+        sparkle[0][2] = "_";
+        sparkle[7][2] ="_";
+        sparkle[1][3] = "\\";
+        sparkle[6][3] ="/";
+        sparkle[1][4] = "/";
+        sparkle[6][4] = "\\";
+        sparkle[3][5] = "\\";
+        sparkle[4][5] = "/";
+        sparkle[2][5] = "‾";
+        sparkle[1][5] = "‾";
+        sparkle[5][5] = "‾";
+        sparkle[6][5] = "‾";
+
+        // ‾ character found by Toby Korn
+    
+        
+        printImage(sparkle, xSpace);
     }
 
     public static int getTerminalWidth() {
