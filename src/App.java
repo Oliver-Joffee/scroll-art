@@ -1,11 +1,21 @@
 import java.util.Random;
 
-public class App {
 
+public class App {
+    public static Random rand = new Random();
+
+    public static int count = 0;
     public static int width = getTerminalWidth();
     public static void main(String[] args) throws Exception {
-        System.out.println(getTerminalWidth());
-        printSparkle(40);
+        while (true) {
+            printSparkle(rand.nextInt(getTerminalWidth()));
+            printSparkle(rand.nextInt(getTerminalWidth()));
+            printTriforce((width/2) - 8, count%8);
+            
+            Thread.sleep(100);
+            count ++;
+            
+        }
     }
     public static void printSparkle(int xSpace) {
         String[][] sparkle = new String[8][6];
@@ -52,44 +62,176 @@ public class App {
 
 
 
-    public static void printTriforce(int xSpace) {
-        String[][] triforce = new String[16][8];
-        fillArray(triforce);
+    public static void printTriforce(int xSpace, int frame) {
+        String[][][] triforce = new String[8][16][8];
+        for (int i = 0; i < triforce.length; i++) {
+            fillArray(triforce[i]);
+        }
 
-        triforce[7][0] = "/";
-        triforce[8][0] = "\\";
-        triforce[6][1] = "/";
-        triforce[5][2] = "/";
-        triforce[4][3] = "/";
-        triforce[3][4] = "/";
-        triforce[2][5] = "/";
-        triforce[1][6] = "/";
-        triforce[0][7] = "/";
-        triforce[9][1] = "\\";
-        triforce[10][2] = "\\";
-        triforce[11][3] = "\\";
-        triforce[12][4] = "\\";
-        triforce[13][5] = "\\";
-        triforce[14][6] = "\\";
-        triforce[15][7] = "\\";
+        triforce[0][7][0] = "/";
+        triforce[0][8][0] = "\\";
+        triforce[0][6][1] = "/";
+        triforce[0][5][2] = "/";
+        triforce[0][4][3] = "/";
+        triforce[0][3][4] = "/";
+        triforce[0][2][5] = "/";
+        triforce[0][1][6] = "/";
+        triforce[0][0][7] = "/";
+        triforce[0][9][1] = "\\";
+        triforce[0][10][2] = "\\";
+        triforce[0][11][3] = "\\";
+        triforce[0][12][4] = "\\";
+        triforce[0][13][5] = "\\";
+        triforce[0][14][6] = "\\";
+        triforce[0][15][7] = "\\";
+
+
 
         for (int i = 1; i <= 14; i++) {
-            triforce[i][7] = "_";
+            triforce[0][i][7] = "_";
         }
 
         for (int i = 5; i <= 10; i ++) {
-            triforce[i][3] = "_";
+            triforce[0][i][3] = "_";
         }
 
-        triforce[5][4] = "\\";
-        triforce[6][5] = "\\";
-        triforce[7][6] = "\\";
+        triforce[0][5][4] = "\\";
+        triforce[0][6][5] = "\\";
+        triforce[0][7][6] = "\\";
 
-        triforce[10][4] = "/";
-        triforce[9][5] = "/";
-        triforce[8][6] = "/";
+        triforce[0][10][4] = "/";
+        triforce[0][9][5] = "/";
+        triforce[0][8][6] = "/";
 
-        printImage(triforce, xSpace);
+
+
+        triforce[1][7][0] = "/";
+        triforce[1][8][0] = "\\";
+        triforce[1][7][1] = "|";
+        triforce[1][8][1] = "|";
+        triforce[1][6][2] = "/";
+        triforce[1][9][2] = "\\";
+        triforce[1][6][3] = "|";
+        triforce[1][9][3] = "|";
+        triforce[1][7][3] = "_";
+        triforce[1][8][3] = "_";
+        triforce[1][5][4] = "/";
+        triforce[1][10][4] = "\\";
+        triforce[1][6][4] = "\\";
+        triforce[1][9][4] = "/";
+        triforce[1][5][5] = "|";
+        triforce[1][10][5] = "|";
+        triforce[1][7][5] = "|";
+        triforce[1][8][5] = "|";
+        triforce[1][4][6] = "/";
+        triforce[1][7][6] = "\\";
+        triforce[1][8][6] = "/";
+        triforce[1][11][6] = "\\";
+        triforce[1][4][7] = "|";
+        triforce[1][5][7] = "_";
+        triforce[1][6][7] = "_";
+        triforce[1][7][7] = "_";
+        triforce[1][8][7] = "_";
+        triforce[1][9][7] = "_";
+        triforce[1][10][7] = "_";
+        triforce[1][11][7] = "|";
+
+
+        triforce[2][7][0] = "/";
+        triforce[2][8][0] = "\\";
+        triforce[2][7][1] = "|";
+        triforce[2][8][1] = "|";
+        triforce[2][7][2] = "|";
+        triforce[2][8][2] = "|";
+        triforce[2][6][3] = "/";
+        triforce[2][7][3] = "_";
+        triforce[2][8][3] = "_";
+        triforce[2][9][3] = "\\";
+        triforce[2][6][4] = "|";
+        triforce[2][7][4] = "|";
+        triforce[2][8][4] = "|";
+        triforce[2][9][4] = "|";
+        triforce[2][6][5] = "|";
+        triforce[2][7][5] = "|";
+        triforce[2][8][5] = "|";
+        triforce[2][9][5] = "|";
+        triforce[2][5][6] = "/";
+        triforce[2][7][6] = "\\";
+        triforce[2][8][6] = "/";
+        triforce[2][10][6] = "\\";
+        triforce[2][5][7] = "|";
+        triforce[2][6][7] = "_";
+        triforce[2][7][7] = "_";
+        triforce[2][8][7] = "_";
+        triforce[2][9][7] = "_";
+        triforce[2][10][7] = "_";
+
+
+
+        triforce[3][7][0] = "/";
+        triforce[3][8][0] = "\\";
+        triforce[3][7][1] = "|";
+        triforce[3][8][1] = "|";
+        triforce[3][7][2] = "|";
+        triforce[3][8][2] = "|";
+        triforce[3][7][3] = "|";
+        triforce[3][8][3] = "|";
+        triforce[3][6][4] = "/";
+        triforce[3][7][4] = "/";
+        triforce[3][8][4] = "\\";
+        triforce[3][9][4] = "\\";
+        triforce[3][6][5] = "|";
+        triforce[3][7][5] = "|";
+        triforce[3][8][5] = "|";
+        triforce[3][9][5] = "|";
+        triforce[3][6][6] = "|";
+        triforce[3][7][6] = "|";
+        triforce[3][8][6] = "|";
+        triforce[3][9][6] = "|";
+        triforce[3][6][7] = "|";
+        triforce[3][7][7] = "_";
+        triforce[3][8][7] = "_";
+        triforce[3][9][7] = "|";
+
+
+
+        triforce[4][7][0] = "/";
+        triforce[4][8][0] = "\\";
+        triforce[4][7][1] = "|";
+        triforce[4][8][1] = "|";
+        triforce[4][7][2] = "|";
+        triforce[4][8][2] = "|";
+        triforce[4][7][3] = "|";
+        triforce[4][8][3] = "|";
+        triforce[4][7][4] = "|";
+        triforce[4][8][4] = "|";
+        triforce[4][7][5] = "|";
+        triforce[4][8][5] = "|";
+        triforce[4][7][6] = "|";
+        triforce[4][8][6] = "|";
+        triforce[4][7][7] = "|";
+        triforce[4][8][7] = "|";
+
+        for(int i = 0; i < triforce[3].length; i ++) {
+            for ( int f = 0; f < triforce[3][1].length; f++) {
+                triforce[5][i][f] = triforce[3][i][f];
+            }
+        }
+
+        for(int i = 0; i < triforce[3].length; i ++) {
+            for ( int f = 0; f < triforce[3][1].length; f++) {
+                triforce[6][i][f] = triforce[2][i][f];
+            }
+        }
+
+        for(int i = 0; i < triforce[3].length; i ++) {
+            for ( int f = 0; f < triforce[3][1].length; f++) {
+                triforce[7][i][f] = triforce[1][i][f];
+            }
+        }
+
+        printImage(triforce[frame], xSpace);
+
 
     }
 
@@ -99,44 +241,6 @@ public class App {
                 array[x][y] = " ";
             }
         }
-    }
-
-    public static void printStar(int xSpace) {
-        String[][] star = new String[10][9];
-
-        fillArray(star);
-
-        star[4][0] = "/";
-        star[5][0] = "\\";
-        star[3][1] = "/";
-        star[6][1] = "\\";
-        star[3][2] = "/";
-        star[6][2] = "\\";
-        star[0][3] = "-";
-        star[1][3] = "-";
-        star[2][3] = "-";
-        star[7][3] = "-";
-        star[8][3] = "-";
-        star[9][3] = "-";
-        star[0][4] = "\\";
-        star[9][4] = "/";
-        star[1][5] = "\\";
-        star[8][5] ="/";
-        star[2][6] = "\\";
-        star[4][6] = "/";
-        star[5][6] = "\\";
-        star[6][6] = "/";
-        star[7][6] = "/";
-        star[2][7] = "/";
-        star[3][7] = "/";
-        star[6][7] = "\\";
-        star[7][7] = "\\";
-        star[1][8] = "/";
-        star[2][8] = "-";
-        star[7][8] = "-";
-        star[8][8] = "\\";
-
-        printImage(star, xSpace);
     }
 
     public static void printImage(String[][] star, int xSpace) {
