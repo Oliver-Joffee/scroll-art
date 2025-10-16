@@ -1,18 +1,1 @@
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+The wave ascii art, or Second, demonstrates both centering capabilities and a fun noise pattern. The more interesting piece of art is the spinning triforce from Zelda. I had atrted with just a still life triforce repeating and printing randomly, but then I realized it didn;t make sense lore wise. Instead I chose to mimic one of the cutscenes from the games, where the Triforce spins down from the heavens with sparkles surrounding it. I took the the Triforce and put it into a Google Sheets so it would be easier to work with. I then took the diagonal sides and made them alternate between slashes and |, leading to the effect of it getting thinner and spinning. I repeated this until I ended up with a line, meaning the animation was complete. I turned the 2D Triforce array into a 3D one to account for the frames, and made frames a part of the function.
