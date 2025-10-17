@@ -22,9 +22,6 @@ public class App {
         String[][] sparkle = new String[8][6];
         fillArray(sparkle);
 
-        sparkle[6][0] = "O";
-        sparkle[7][0] = "J";
-
         sparkle[3][0] = "/";
         sparkle[4][0] = "\\";
         sparkle[2][0] = "_";
@@ -72,23 +69,6 @@ public class App {
             fillArray(triforce[i]);
         }
 
-        triforce[0][0][0] = "O";
-        triforce[1][0][0] = "O";
-        triforce[2][0][0] = "O";
-        triforce[3][0][0] = "O";
-        triforce[4][0][0] = "O";
-        triforce[5][0][0] = "O";
-        triforce[6][0][0] = "O";
-        triforce[7][0][0] = "O";
-
-        triforce[0][1][0] = "J";
-        triforce[1][1][0] = "J";
-        triforce[2][1][0] = "J";
-        triforce[3][1][0] = "J";
-        triforce[4][1][0] = "J";
-        triforce[5][1][0] = "J";
-        triforce[6][1][0] = "J";
-        triforce[7][1][0] = "J";
 
         triforce[0][7][0] = "/";
         triforce[0][8][0] = "\\";
