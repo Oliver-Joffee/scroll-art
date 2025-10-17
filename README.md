@@ -5,3 +5,22 @@ CITATION POINTS
 Triforce was made by me, 1 point
 Sparkle was made by me, 1 point
 Wave pattern made by me, 1 point
+
+ART
+OJ     /\       
+      /  \      
+     /    \     
+    /______\    
+   / \    / \   
+  /   \  /   \  
+ /     \/     \ 
+/______________\
+
+ __/\__
+ \    / 
+_/    \_
+ \    / 
+ /    \ 
+ ‾‾\/‾‾ OJ
+
+ 
