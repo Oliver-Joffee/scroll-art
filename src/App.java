@@ -48,7 +48,20 @@ public class App {
         // ‾ character found by Toby Korn
     
         
-        printImage(sparkle, xSpace);
+        printImage(switchToChar(sparkle), xSpace);
+    }
+
+    public static char[][] switchToChar(String[][] stringArray) {
+        char[][] charArray = new char[stringArray.length][stringArray[0].length];
+
+        for (int i = 0; i < charArray.length; i ++) {
+            for (int j = 0; j < charArray[0].length; j ++) {
+                charArray[i][j] = stringArray[i][j].charAt(0);
+            }
+        }
+
+        return charArray;
+
     }
 
     public static int getTerminalWidth() {
@@ -232,7 +245,7 @@ public class App {
             }
         }
 
-        printImage(triforce[frame], xSpace);
+        printImage(switchToChar(triforce[frame]), xSpace);
 
 
     }
@@ -245,7 +258,7 @@ public class App {
         }
     }
 
-    public static void printImage(String[][] star, int xSpace) {
+    public static void printImage(char[][] star, int xSpace) {
             if (xSpace + star.length < width) {
                 for (int y = 0; y < star[1].length; y++) {
                     for (int i =0; i < xSpace; i++) {
