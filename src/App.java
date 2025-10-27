@@ -6,15 +6,64 @@ public class App {
 
     public static int count = 0;
     public static int width = getTerminalWidth();
+
+    public static AsciiArt callingCard = new AsciiArt(
+                "      /\\\\\\|//\\\\    \n" + //
+                "      \\#####/|     \n" + //
+                "       |----|      \n" + //
+                "       |####|      \n" + //
+                "       |####|      \n" + //
+                "       |####|      \n" + //
+                "       |----|      \n" + //
+                "      -|-----      \n" + //
+                "     /#######\\##   \n" + //
+                "     |###/---##    \n" + //
+                "     \\---  ######  \n" + //
+                "      |#########   \n" + //
+                "      \\// # //#    \n" + //
+                "         \\-/  #"); //From conor felczak
+
+    public static AsciiArt jokerMask = new AsciiArt(
+                "  /----\\/----\\\n" + //
+                "  \\ ##    ## /\n" + //
+                "   \\  /  \\  / \n" + //
+                "    \\- \\/ -/"); //also from conor felczak
+                
+    public static AsciiArt sword = new AsciiArt(
+                "       |-|      \n" + //
+                "       | |\n" + //
+                "       | |\n" + //
+                "     -------\n" + //
+                "    |\\\\\\\\\\\\\\|\n" + //
+                "     -------\n" + //
+                "       | |\n" + //
+                "       | |\n" + //
+                "       |||\n" + //
+                "       |||\n" + //
+                "       |||\n" + //
+                "       \\|/\n" + //
+                "        ˇ"); //from toby korn
+
+
+    
     public static void main(String[] args) throws Exception {
         while (true) {
-            printSparkle(rand.nextInt(getTerminalWidth() - 8));
-            printSparkle(rand.nextInt(getTerminalWidth() - 8));
-            printSparkle(rand.nextInt(getTerminalWidth() - 8));
+            if(count%4 == 0) {
+                printSparkle(rand.nextInt(getTerminalWidth() - 8));
+            } else if (count % 4 == 1) {
+                printImage(callingCard.collumnToRow(), rand.nextInt(getTerminalWidth() - callingCard.collumnToRow()[0].length));
+            } else if (count % 4 == 2) {
+                printImage(jokerMask.collumnToRow(), rand.nextInt(getTerminalWidth() - jokerMask.collumnToRow()[0].length));
+            } else {
+                printImage(sword.collumnToRow(),  rand.nextInt(getTerminalWidth() - sword.collumnToRow()[0].length));
+            }
+            
+            
             printTriforce((width/2) - 8, count%8);
             
             Thread.sleep(100);
             count ++;
+
             
         }
     }
@@ -45,7 +94,7 @@ public class App {
         sparkle[5][5] = "‾";
         sparkle[6][5] = "‾";
 
-        // ‾ character found by Toby Korn
+        //  ‾ character found by Toby Korn
     
         
         printImage(switchToChar(sparkle), xSpace);
@@ -268,6 +317,7 @@ public class App {
                         System.out.print(star[x][y]);
                 }
                 System.out.println();
+                
             }
         }
     }
